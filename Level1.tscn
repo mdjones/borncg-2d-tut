@@ -66,35 +66,38 @@ texture = ExtResource( 4 )
 centered = false
 
 [node name="farblocks" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color( 0.290196, 0.290196, 0.356863, 0.290196 )
 position = Vector2( 0.3, 0.3 )
-motion_scale = Vector2( 0.2, 0.2 )
-motion_mirroring = Vector2( 1120, 840 )
+scale = Vector2( 2, 2 )
+motion_scale = Vector2( 0.25, 0.25 )
+motion_mirroring = Vector2( 2560, 1920 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/farblocks"]
-modulate = Color( 0.141176, 0.0941176, 0.694118, 1 )
 position = Vector2( 1, 1 )
-scale = Vector2( 1.75, 1.75 )
+scale = Vector2( 4, 4 )
 texture = ExtResource( 5 )
 centered = false
 
 [node name="middle blocks" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color( 0.517647, 0.521569, 0.760784, 0.490196 )
 position = Vector2( 0.3, 0.3 )
-motion_scale = Vector2( 0.2, 0.2 )
-motion_mirroring = Vector2( 1120, 840 )
+motion_scale = Vector2( 0.4, 0.4 )
+motion_offset = Vector2( 0, -500 )
+motion_mirroring = Vector2( 1600, 1200 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/middle blocks"]
-modulate = Color( 0.141176, 0.0941176, 0.694118, 1 )
 position = Vector2( 1, 1 )
-scale = Vector2( 1.75, 1.75 )
+scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 5 )
 centered = false
 
 [node name="nearbye blocks" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.7, 0.6 )
+modulate = Color( 0.341176, 0.584314, 0.352941, 1 )
+motion_scale = Vector2( 0.7, 0.7 )
 motion_mirroring = Vector2( 1120, 840 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/nearbye blocks"]
-modulate = Color( 0.501961, 0.772549, 0.772549, 0.521569 )
+modulate = Color( 1, 1, 1, 0.521569 )
 position = Vector2( 1, 1 )
 scale = Vector2( 1.75, 1.75 )
 texture = ExtResource( 5 )
