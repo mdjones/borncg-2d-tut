@@ -24,8 +24,6 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			velocity.y = JUMP_FORCE
-		if position.y > 700:
-			position = Vector2(280,0)
 
 	velocity.y = velocity.y + GRAVITY
 
@@ -33,3 +31,9 @@ func _physics_process(delta):
 	
 	velocity.x = lerp(velocity.x, 0, 0.05)
 	velocity.y = lerp(velocity.y, 0, 0.05)
+
+
+func _on_FallZone_body_entered(body):
+	print(body)
+	get_tree().change_scene("res://Level1.tscn")
+	
