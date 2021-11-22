@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 var velocity = Vector2(0,0)
+var coins = 0
 
 const SPEED = 180
 const GRAVITY = 50
@@ -31,9 +32,15 @@ func _physics_process(delta):
 	
 	velocity.x = lerp(velocity.x, 0, 0.05)
 	velocity.y = lerp(velocity.y, 0, 0.05)
+	
+	if coins > 5:
+		get_tree().change_scene("res://Level1.tscn")
 
 
 func _on_FallZone_body_entered(body):
 	print(body)
 	get_tree().change_scene("res://Level1.tscn")
 	
+func add_coin():
+	coins += 1
+	print(coins)

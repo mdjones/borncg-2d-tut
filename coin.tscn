@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/coin/gold_1.png" type="Texture" id=1]
 [ext_resource path="res://coin.gd" type="Script" id=2]
@@ -16,6 +16,22 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="Animation" id=3]
+resource_name = "bounce"
+length = 0.55
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -0.599731, -2.39891 ), Vector2( 1.19946, -182.318 ), Vector2( 0, -1.19946 ) ]
+}
+
 [node name="coin" type="Area2D"]
 collision_layer = 0
 script = ExtResource( 2 )
@@ -24,9 +40,14 @@ script = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -1.19946 )
 frames = SubResource( 2 )
 animation = "spin"
 frame = 1
 playing = true
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/bounce = SubResource( 3 )
+
 [connection signal="body_entered" from="." to="." method="_on_coin_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
