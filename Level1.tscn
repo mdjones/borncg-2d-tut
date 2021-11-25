@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://WorldTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Steve.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://assets/fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://HUD.gd" type="Script" id=9]
 [ext_resource path="res://enemy.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/music/Retro Beat.ogg" type="AudioStream" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 128, 32 )
@@ -191,7 +192,12 @@ position = Vector2( 448, 192 )
 [node name="enemies" type="Node2D" parent="."]
 
 [node name="enemy1" parent="enemies" instance=ExtResource( 10 )]
-position = Vector2( 195.267, 183.88 )
+position = Vector2( 47.5834, 211.82 )
+direction = 1
+detects_cliffs = false
+
+[node name="enemy4" parent="enemies" instance=ExtResource( 10 )]
+position = Vector2( 47.5834, 211.82 )
 direction = 1
 detects_cliffs = false
 
@@ -215,6 +221,11 @@ limit_right = 5000
 limit_bottom = 700
 smoothing_enabled = true
 editor_draw_limits = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 11 )
+volume_db = -8.0
+autoplay = true
 
 [connection signal="body_entered" from="FallZone" to="Steve" method="_on_FallZone_body_entered"]
 [connection signal="coin_collected" from="coins/coin1" to="HUD" method="_on_coin_collected"]
