@@ -33,8 +33,25 @@ func _physics_process(delta):
 	velocity.y = lerp(velocity.y, 0, 0.05)
 
 
-
 func _on_FallZone_body_entered(body):
-	print(body)
 	get_tree().change_scene("res://Level1.tscn")
 
+
+func bounce():
+	velocity.y = JUMP_FORCE*0.6
+	
+func ouch(var enemy_pos_x):
+	set_modulate(Color(1,0.3,0.3,0.4))
+	velocity.y = JUMP_FORCE*0.5
+	if position.x < enemy_pos_x:
+		velocity.x = -800
+	elif position.x > enemy_pos_x:
+		velocity.x = 800
+	Input.action_release("left")
+	Input.action_release("right")
+	
+	$Timer.start()
+
+
+func _on_Timer_timeout():
+	get_tree().change_scene("res://Level1.tscn")

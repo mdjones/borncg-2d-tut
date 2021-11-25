@@ -65,20 +65,6 @@ position = Vector2( 540, 96 )
 shape = SubResource( 2 )
 one_way_collision = true
 
-[node name="Steve" parent="." instance=ExtResource( 2 )]
-position = Vector2( 300, 200 )
-collision_mask = 30
-
-[node name="Camera2D" type="Camera2D" parent="Steve"]
-position = Vector2( 1, 0 )
-current = true
-limit_left = -192
-limit_top = -500
-limit_right = 5000
-limit_bottom = 700
-smoothing_enabled = true
-editor_draw_limits = true
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="PurpleSky" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -212,6 +198,23 @@ detects_cliffs = false
 [node name="enemy2" parent="enemies" instance=ExtResource( 10 )]
 position = Vector2( 512, 192 )
 direction = 1
+
+[node name="enemy3" parent="enemies" instance=ExtResource( 10 )]
+position = Vector2( 487.053, 31.3441 )
+
+[node name="Steve" parent="." instance=ExtResource( 2 )]
+position = Vector2( 300, 200 )
+collision_mask = 30
+
+[node name="Camera2D" type="Camera2D" parent="Steve"]
+position = Vector2( 1, 0 )
+current = true
+limit_left = -192
+limit_top = -500
+limit_right = 5000
+limit_bottom = 700
+smoothing_enabled = true
+editor_draw_limits = true
 
 [connection signal="body_entered" from="FallZone" to="Steve" method="_on_FallZone_body_entered"]
 [connection signal="coin_collected" from="coins/coin1" to="HUD" method="_on_coin_collected"]
