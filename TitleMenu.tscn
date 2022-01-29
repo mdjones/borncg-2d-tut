@@ -58,9 +58,9 @@ margin_left = 92.0111
 margin_top = 138.463
 margin_right = 972.011
 margin_bottom = 248.463
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.207843, 0.447059, 0.956863, 1 )
 custom_colors/font_outline_modulate = Color( 0.509804, 0.521569, 0.141176, 1 )
+custom_fonts/font = SubResource( 1 )
 text = "Platformer Game!!"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -94,8 +94,8 @@ margin_left = 23.245
 margin_top = 3.85019
 margin_right = 78.245
 margin_bottom = 28.8502
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
 text = "SPACE"
 
 [node name="TextureRect2" type="TextureRect" parent="Controls"]
@@ -164,8 +164,8 @@ margin_left = 25.4994
 margin_top = 15.6677
 margin_right = 115.499
 margin_bottom = 35.6677
-custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.901961, 0.721569, 0.0313726, 1 )
+custom_fonts/font = SubResource( 4 )
 text = "CONTROLS:"
 
 [node name="Items" type="Panel" parent="."]
@@ -183,8 +183,8 @@ margin_left = 13.4918
 margin_top = 12.0588
 margin_right = 76.4918
 margin_bottom = 32.0588
-custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.901961, 0.721569, 0.0313726, 1 )
+custom_fonts/font = SubResource( 4 )
 text = "ITEMS:"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -269,10 +269,10 @@ margin_left = 360.0
 margin_top = 316.0
 margin_right = 572.0
 margin_bottom = 376.0
-custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.0352941, 0.603922, 0.168627, 1 )
 custom_colors/font_color_hover = Color( 0.329412, 0.329412, 1, 1 )
 custom_colors/font_color_pressed = Color( 0.746094, 0.178006, 0.0504757, 1 )
+custom_fonts/font = SubResource( 5 )
 text = "PLAY!"
 flat = true
 script = ExtResource( 10 )
